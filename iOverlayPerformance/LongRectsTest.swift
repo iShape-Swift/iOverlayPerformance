@@ -27,7 +27,7 @@ import Foundation
 struct LongRectsTest {
     
     func run() {
-        let n: Int64 = 1000
+        let n: Int64 = 10
         
         let subjPaths = self.longRects(
             start: .zero,
@@ -51,22 +51,22 @@ struct LongRectsTest {
         
         let graph = overlay.buildGraph()
         
-        let clip = graph.extractShapes(fillRule: .clip, minArea: 0)
+        let clip = graph.extractShapes(overlayRule: .clip, minArea: 0)
         assert(!clip.isEmpty)
         
-        let subject = graph.extractShapes(fillRule: .subject, minArea: 0)
+        let subject = graph.extractShapes(overlayRule: .subject, minArea: 0)
         assert(!subject.isEmpty)
         
-        let difference = graph.extractShapes(fillRule: .difference, minArea: 0)
+        let difference = graph.extractShapes(overlayRule: .difference, minArea: 0)
         assert(!difference.isEmpty)
         
-        let intersect = graph.extractShapes(fillRule: .intersect, minArea: 0)
+        let intersect = graph.extractShapes(overlayRule: .intersect, minArea: 0)
         assert(!intersect.isEmpty)
         
-        let union = graph.extractShapes(fillRule: .union, minArea: 0)
+        let union = graph.extractShapes(overlayRule: .union, minArea: 0)
         assert(!union.isEmpty)
         
-        let xor = graph.extractShapes(fillRule: .xor, minArea: 0)
+        let xor = graph.extractShapes(overlayRule: .xor, minArea: 0)
         assert(!xor.isEmpty)
         
         let end = Date()

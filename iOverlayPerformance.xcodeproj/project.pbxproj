@@ -12,6 +12,8 @@
 		5456469F2AFAAD96008ED0AA /* ManySquaresTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5456469E2AFAAD96008ED0AA /* ManySquaresTest.swift */; };
 		545646A22AFAAE03008ED0AA /* iOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = 545646A12AFAAE03008ED0AA /* iOverlay */; };
 		545646A42AFAAF48008ED0AA /* LongRectsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545646A32AFAAF48008ED0AA /* LongRectsTest.swift */; };
+		546C7F4A2B1728B8000D36DF /* NoOverlapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546C7F492B1728B8000D36DF /* NoOverlapTest.swift */; };
+		54C3C5B42B163630001E7B57 /* iOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = 54C3C5B32B163630001E7B57 /* iOverlay */; };
 		54C9435A2B123F1E0048E4B0 /* iShape in Frameworks */ = {isa = PBXBuildFile; productRef = 54C943592B123F1E0048E4B0 /* iShape */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,7 @@
 		545646972AFAAD74008ED0AA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5456469E2AFAAD96008ED0AA /* ManySquaresTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManySquaresTest.swift; sourceTree = "<group>"; };
 		545646A32AFAAF48008ED0AA /* LongRectsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongRectsTest.swift; sourceTree = "<group>"; };
+		546C7F492B1728B8000D36DF /* NoOverlapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOverlapTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,7 @@
 				545646A22AFAAE03008ED0AA /* iOverlay in Frameworks */,
 				54C9435A2B123F1E0048E4B0 /* iShape in Frameworks */,
 				54371A2C2AFD68C6007BF214 /* iOverlay in Frameworks */,
+				54C3C5B42B163630001E7B57 /* iOverlay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +74,7 @@
 				545646972AFAAD74008ED0AA /* main.swift */,
 				5456469E2AFAAD96008ED0AA /* ManySquaresTest.swift */,
 				545646A32AFAAF48008ED0AA /* LongRectsTest.swift */,
+				546C7F492B1728B8000D36DF /* NoOverlapTest.swift */,
 			);
 			path = iOverlayPerformance;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 				545646A12AFAAE03008ED0AA /* iOverlay */,
 				54371A2B2AFD68C6007BF214 /* iOverlay */,
 				54C943592B123F1E0048E4B0 /* iShape */,
+				54C3C5B32B163630001E7B57 /* iOverlay */,
 			);
 			productName = iOverlayPerformance;
 			productReference = 545646942AFAAD74008ED0AA /* iOverlayPerformance */;
@@ -124,7 +130,7 @@
 			);
 			mainGroup = 5456468B2AFAAD74008ED0AA;
 			packageReferences = (
-				54371A2A2AFD68C6007BF214 /* XCLocalSwiftPackageReference "../iOverlay" */,
+				54C3C5B22B163630001E7B57 /* XCLocalSwiftPackageReference "../../iOverlay" */,
 			);
 			productRefGroup = 545646952AFAAD74008ED0AA /* Products */;
 			projectDirPath = "";
@@ -140,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546C7F4A2B1728B8000D36DF /* NoOverlapTest.swift in Sources */,
 				545646982AFAAD74008ED0AA /* main.swift in Sources */,
 				5456469F2AFAAD96008ED0AA /* ManySquaresTest.swift in Sources */,
 				545646A42AFAAF48008ED0AA /* LongRectsTest.swift in Sources */,
@@ -313,9 +320,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		54371A2A2AFD68C6007BF214 /* XCLocalSwiftPackageReference "../iOverlay" */ = {
+		54C3C5B22B163630001E7B57 /* XCLocalSwiftPackageReference "../../iOverlay" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../iOverlay;
+			relativePath = ../../iOverlay;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -325,6 +332,10 @@
 			productName = iOverlay;
 		};
 		545646A12AFAAE03008ED0AA /* iOverlay */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iOverlay;
+		};
+		54C3C5B32B163630001E7B57 /* iOverlay */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = iOverlay;
 		};
