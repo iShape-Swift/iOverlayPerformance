@@ -1,8 +1,8 @@
 //
-//  ManySquaresTest.swift
+//  ManySquaresUnionTest.swift
 //  iOverlayPerformance
 //
-//  Created by Nail Sharipov on 07.11.2023.
+//  Created by Nail Sharipov on 11.12.2023.
 //
 
 import iFixFloat
@@ -10,24 +10,14 @@ import iShape
 import iOverlay
 import Foundation
 
-// 3 GHz 6-Core Intel Core i5, 40 GB 2667 MHz DDR4
-
-// 1.02
-
-// 100 - 4.927271008491516
-// 200 - 73.26099109649658
-// 300 - 379.37199997901917
-
-// master
-// 100 - 0.8697209358215332
-// 200 - 5.726709961891174
-// 300 - 18.1281099319458
-// 500 - 86.17689502239227
-struct ManySquaresTest {
+// 100 - 0.4140709638595581
+// 500 - 9.980271935462952
+// 1000 - 41.02520501613617
+struct ManySquaresUnionTest {
     
     func run() {
 
-        let n = 10
+        let n = 500
         
         let subjPaths = self.manySuares(
             start: .zero,
@@ -47,27 +37,12 @@ struct ManySquaresTest {
         
         var overlay = Overlay()
         overlay.add(paths: subjPaths, type: .subject)
-        overlay.add(paths: clipPaths, type: .clip)
+        overlay.add(paths: clipPaths, type: .subject)
         
-        let graph = overlay.buildGraph()
+        let graph = overlay.buildGraph(fillRule: .nonZero)
         
-//        let clip = graph.extractShapes(overlayRule: .clip, minArea: 0)
-//        assert(!clip.isEmpty)
-//        
-//        let subject = graph.extractShapes(overlayRule: .subject, minArea: 0)
-//        assert(!subject.isEmpty)
-//        
-//        let difference = graph.extractShapes(overlayRule: .difference, minArea: 0)
-//        assert(!difference.isEmpty)
-//        
-//        let intersect = graph.extractShapes(overlayRule: .intersect, minArea: 0)
-//        assert(!intersect.isEmpty)
-        
-        let union = graph.extractShapes(overlayRule: .union, minArea: 0)
+        let union = graph.extractShapes(overlayRule: .subject, minArea: 0)
         assert(!union.isEmpty)
-        
-//        let xor = graph.extractShapes(overlayRule: .xor, minArea: 0)
-//        assert(!xor.isEmpty)
 
         let end = Date()
         
