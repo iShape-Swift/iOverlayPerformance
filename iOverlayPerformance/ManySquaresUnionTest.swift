@@ -11,13 +11,14 @@ import iOverlay
 import Foundation
 
 // 100 - 0.4140709638595581
-// 500 - 9.980271935462952
-// 1000 - 41.02520501613617
+// 500 - 8.74333393573761
+// 1000 - 31.344716906547546
+// 1500 - 73.56235802173615
 struct ManySquaresUnionTest {
     
     func run() {
 
-        let n = 500
+        let n = 1500
         
         let subjPaths = self.manySuares(
             start: .zero,
@@ -49,7 +50,6 @@ struct ManySquaresUnionTest {
         print("spend time: \(end.timeIntervalSince(start))")
         
     }
-    
      
      private func manySuares(start: FixVec, size a: FixFloat, offset: FixFloat, n: Int) -> [FixPath] {
          var result = [FixPath]()
