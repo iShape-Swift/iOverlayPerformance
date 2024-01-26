@@ -16,6 +16,9 @@
 		547D14122B270D520092E67D /* ManySquaresUnionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547D14112B270D520092E67D /* ManySquaresUnionTest.swift */; };
 		54C3C5B42B163630001E7B57 /* iOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = 54C3C5B32B163630001E7B57 /* iOverlay */; };
 		54C9435A2B123F1E0048E4B0 /* iShape in Frameworks */ = {isa = PBXBuildFile; productRef = 54C943592B123F1E0048E4B0 /* iShape */; };
+		54CCFCAC2B62439A00EB6D38 /* WindowsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCFCAB2B62439A00EB6D38 /* WindowsTest.swift */; };
+		54CCFCAF2B625E9800EB6D38 /* iShape in Frameworks */ = {isa = PBXBuildFile; productRef = 54CCFCAE2B625E9800EB6D38 /* iShape */; };
+		54CD21392B629A2100340B9F /* СoncentricSquaresTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CD21382B629A2100340B9F /* СoncentricSquaresTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +40,8 @@
 		545646A32AFAAF48008ED0AA /* LongRectsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongRectsTest.swift; sourceTree = "<group>"; };
 		546C7F492B1728B8000D36DF /* NoOverlapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoOverlapTest.swift; sourceTree = "<group>"; };
 		547D14112B270D520092E67D /* ManySquaresUnionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManySquaresUnionTest.swift; sourceTree = "<group>"; };
+		54CCFCAB2B62439A00EB6D38 /* WindowsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsTest.swift; sourceTree = "<group>"; };
+		54CD21382B629A2100340B9F /* СoncentricSquaresTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СoncentricSquaresTest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54CCFCAF2B625E9800EB6D38 /* iShape in Frameworks */,
 				545646A22AFAAE03008ED0AA /* iOverlay in Frameworks */,
 				54C9435A2B123F1E0048E4B0 /* iShape in Frameworks */,
 				54371A2C2AFD68C6007BF214 /* iOverlay in Frameworks */,
@@ -78,6 +84,8 @@
 				545646A32AFAAF48008ED0AA /* LongRectsTest.swift */,
 				546C7F492B1728B8000D36DF /* NoOverlapTest.swift */,
 				547D14112B270D520092E67D /* ManySquaresUnionTest.swift */,
+				54CCFCAB2B62439A00EB6D38 /* WindowsTest.swift */,
+				54CD21382B629A2100340B9F /* СoncentricSquaresTest.swift */,
 			);
 			path = iOverlayPerformance;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 				54371A2B2AFD68C6007BF214 /* iOverlay */,
 				54C943592B123F1E0048E4B0 /* iShape */,
 				54C3C5B32B163630001E7B57 /* iOverlay */,
+				54CCFCAE2B625E9800EB6D38 /* iShape */,
 			);
 			productName = iOverlayPerformance;
 			productReference = 545646942AFAAD74008ED0AA /* iOverlayPerformance */;
@@ -134,6 +143,7 @@
 			mainGroup = 5456468B2AFAAD74008ED0AA;
 			packageReferences = (
 				54C3C5B22B163630001E7B57 /* XCLocalSwiftPackageReference "../../iOverlay" */,
+				54CCFCAD2B625E9800EB6D38 /* XCLocalSwiftPackageReference "../../iShape" */,
 			);
 			productRefGroup = 545646952AFAAD74008ED0AA /* Products */;
 			projectDirPath = "";
@@ -150,7 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				547D14122B270D520092E67D /* ManySquaresUnionTest.swift in Sources */,
+				54CCFCAC2B62439A00EB6D38 /* WindowsTest.swift in Sources */,
 				546C7F4A2B1728B8000D36DF /* NoOverlapTest.swift in Sources */,
+				54CD21392B629A2100340B9F /* СoncentricSquaresTest.swift in Sources */,
 				545646982AFAAD74008ED0AA /* main.swift in Sources */,
 				5456469F2AFAAD96008ED0AA /* ManySquaresTest.swift in Sources */,
 				545646A42AFAAF48008ED0AA /* LongRectsTest.swift in Sources */,
@@ -328,6 +340,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../iOverlay;
 		};
+		54CCFCAD2B625E9800EB6D38 /* XCLocalSwiftPackageReference "../../iShape" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../iShape;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -344,6 +360,10 @@
 			productName = iOverlay;
 		};
 		54C943592B123F1E0048E4B0 /* iShape */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iShape;
+		};
+		54CCFCAE2B625E9800EB6D38 /* iShape */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = iShape;
 		};
