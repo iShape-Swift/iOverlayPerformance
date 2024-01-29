@@ -9,5 +9,5 @@
 //ManySquaresUnionTest().run()
 //LongRectsTest().run()
 //NoOverlapTest().run()
-WindowsTest().run()
-//СoncentricSquaresTest().run()
+//WindowsTest().run()
+СoncentricSquaresTest().run()

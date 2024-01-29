@@ -11,13 +11,13 @@ import iOverlay
 import Foundation
 
 
-// 100 - 1.9637190103530884
-// 200 - 27.933372020721436
+// 100 - 1.2763789892196655
+// 200 - 17.22313404083252
 struct СoncentricSquaresTest {
     
     func run() {
 
-        let n = 200
+        let n = 100
         let m = n * n
         let b: Int64 = 4
         let subj = self.squares(
@@ -48,7 +48,7 @@ struct СoncentricSquaresTest {
      
      private func squares(a: FixFloat, b: FixFloat, n: Int) -> [FixPath] {
          var result = [FixPath]()
-         result.reserveCapacity(n * n)
+         result.reserveCapacity(n)
          var r = a
          for _ in 0..<n {
              let path: FixPath = [

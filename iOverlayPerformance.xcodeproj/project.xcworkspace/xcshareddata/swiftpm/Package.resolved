@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "ifixfloat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iShape-Swift/iFixFloat",
+      "state" : {
+        "revision" : "355966e3d1b4cd98e4ab79d322cc1a2c87ca76c4",
+        "version" : "1.4.0"
+      }
+    }
+  ],
+  "version" : 2
+}
