@@ -24,10 +24,15 @@ import Foundation
 // 500 - 16.0730299949646
 // 1000 - 117.0342628955841
 
+// 125 - 0.33740293979644775
+// 250 - 2.3845399618148804
+// 500 - 13.026265978813171
+// 1000 - 90.48865497112274
+
 struct LongRectsTest {
     
     func run() {
-        let n: Int64 = 1000
+        let n: Int64 = 500
         
         let subjPaths = self.longRects(
             start: .zero,

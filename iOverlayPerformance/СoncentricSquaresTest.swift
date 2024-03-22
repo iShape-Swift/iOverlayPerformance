@@ -30,7 +30,7 @@ struct СoncentricSquaresTest {
     
     func run() {
 
-        let n = 200
+        let n = 5
         let m = n * n
         let b: Int64 = 4
         let subj = self.squares(
