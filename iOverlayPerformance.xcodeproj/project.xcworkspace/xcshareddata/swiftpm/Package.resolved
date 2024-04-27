@@ -1,0 +1,24 @@
+{
+  "originHash" : "15c91d4923d9ec115803ca746d662d8d0629a479e742ca5f39f338166fec0d08",
+  "pins" : [
+    {
+      "identity" : "ifixfloat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iShape-Swift/iFixFloat",
+      "state" : {
+        "revision" : "064c3b3be706edc66df71eef180a8765ab738e4d",
+        "version" : "1.7.0"
+      }
+    },
+    {
+      "identity" : "itree",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iShape-Swift/iTree",
+      "state" : {
+        "revision" : "fd1e5fd39807fa870a0c5a6758678194976f3603",
+        "version" : "0.3.0"
+      }
+    }
+  ],
+  "version" : 3
+}

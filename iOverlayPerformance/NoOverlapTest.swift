@@ -26,7 +26,7 @@ struct NoOverlapTest {
     
     func run() {
 
-        let n = 125
+        let n: Int32 = 125
         
         let subjPaths = self.manySuares(
             start: .zero,
@@ -51,14 +51,14 @@ struct NoOverlapTest {
     }
     
      
-     private func manySuares(start: FixVec, size a: FixFloat, offset: FixFloat, n: Int) -> [FixPath] {
-         var result = [FixPath]()
-         result.reserveCapacity(n * n)
+     private func manySuares(start: Point, size a: Int32, offset: Int32, n: Int32) -> [Path] {
+         var result = [Path]()
+         result.reserveCapacity(Int(n * n))
          var y = start.y
          for _ in 0..<n {
              var x = start.x
              for _ in 0..<n {
-                 let path: FixPath = [
+                 let path: Path = [
                      .init(x, y),
                      .init(x, y + a),
                      .init(x + a, y + a),

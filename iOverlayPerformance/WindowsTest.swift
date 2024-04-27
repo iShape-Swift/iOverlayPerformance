@@ -28,6 +28,14 @@ import Foundation
 // 1500 - 24.240332007408142
 
 
+// 50 - 0.021960020065307617
+// 100 - 0.09118402004241943
+// 200 - 0.38771891593933105
+// 300 - 0.8464930057525635
+// 500 - 2.3891950845718384
+// 1000 - 9.864031076431274
+// 1500 - 23.118969082832336
+
 // profile
 // 1500:
 // fill: 41.3
@@ -36,12 +44,12 @@ struct WindowsTest {
     
     func run() {
 
-        let n = 1500
-        let offset: Int64 = 30
-        let a: Int64 = 20
-        let b: Int64 = 10
-        let x: Int64 = Int64(n) * offset / 2
-        let start = FixVec(-x, -x)
+        let n = 1000
+        let offset: Int32 = 30
+        let a: Int32 = 20
+        let b: Int32 = 10
+        let x: Int32 = Int32(n) * offset / 2
+        let start = Point(-x, -x)
         
         let subj = self.subjSquares(
             start: start,
@@ -73,14 +81,14 @@ struct WindowsTest {
         
     }
      
-     private func subjSquares(start: FixVec, a: FixFloat, offset: FixFloat, n: Int) -> ([FixPath]) {
-         var result = [FixPath]()
+     private func subjSquares(start: Point, a: Int32, offset: Int32, n: Int) -> ([Path]) {
+         var result = [Path]()
          result.reserveCapacity(n * n)
          var y = start.y
          for _ in 0..<n {
              var x = start.x
              for _ in 0..<n {
-                 let path: FixPath = [
+                 let path: Path = [
                      .init(x, y),
                      .init(x, y + a),
                      .init(x + a, y + a),
@@ -95,8 +103,8 @@ struct WindowsTest {
          return result
      }
     
-    private func clipSquares(start: FixVec, a: FixFloat, b: FixFloat, offset: FixFloat, n: Int) -> ([FixPath]) {
-        var result = [FixPath]()
+    private func clipSquares(start: Point, a: Int32, b: Int32, offset: Int32, n: Int) -> ([Path]) {
+        var result = [Path]()
         result.reserveCapacity(n * n)
         var y = start.y
         let c = (a - b) / 2
@@ -104,7 +112,7 @@ struct WindowsTest {
         for _ in 0..<n {
             var x = start.x
             for _ in 0..<n {
-                let path: FixPath = [
+                let path: Path = [
                     .init(x + c, y + c),
                     .init(x + c, y + d),
                     .init(x + d, y + d),

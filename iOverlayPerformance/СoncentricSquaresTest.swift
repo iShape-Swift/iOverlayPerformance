@@ -32,7 +32,7 @@ struct СoncentricSquaresTest {
 
         let n = 5
         let m = n * n
-        let b: Int64 = 4
+        let b: Int32 = 4
         let subj = self.squares(
             a: b,
             b: b,
@@ -59,12 +59,12 @@ struct СoncentricSquaresTest {
         print("shapes count: \(subj.count)")
     }
      
-     private func squares(a: FixFloat, b: FixFloat, n: Int) -> [FixPath] {
-         var result = [FixPath]()
+     private func squares(a: Int32, b: Int32, n: Int) -> [Path] {
+         var result = [Path]()
          result.reserveCapacity(n)
          var r = a
          for _ in 0..<n {
-             let path: FixPath = [
+             let path: Path = [
                  .init(-r, -r),
                  .init(-r, r),
                  .init(r, r),
