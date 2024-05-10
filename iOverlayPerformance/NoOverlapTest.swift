@@ -26,7 +26,7 @@ struct NoOverlapTest {
     
     func run() {
 
-        let n: Int32 = 125
+        let n: Int32 = 1000
         
         let subjPaths = self.manySuares(
             start: .zero,

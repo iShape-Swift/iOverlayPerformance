@@ -26,7 +26,7 @@ struct ManySquaresTest {
     
     func run() {
 
-        let n = 125
+        let n = 3
         
         let subjPaths = self.manySuares(
             start: .zero,
@@ -43,34 +43,20 @@ struct ManySquaresTest {
         )
         
         let start = Date()
+        var it_count = (1000 / n)
+        it_count = max((it_count * it_count), 1)
         
-        var overlay = Overlay()
-        overlay.add(paths: subjPaths, type: .subject)
-        overlay.add(paths: clipPaths, type: .clip)
-        
-        let graph = overlay.buildGraph()
-        
-//        let clip = graph.extractShapes(overlayRule: .clip, minArea: 0)
-//        assert(!clip.isEmpty)
-//        
-//        let subject = graph.extractShapes(overlayRule: .subject, minArea: 0)
-//        assert(!subject.isEmpty)
-//        
-//        let difference = graph.extractShapes(overlayRule: .difference, minArea: 0)
-//        assert(!difference.isEmpty)
-//        
-//        let intersect = graph.extractShapes(overlayRule: .intersect, minArea: 0)
-//        assert(!intersect.isEmpty)
-        
-        let union = graph.extractShapes(overlayRule: .union, minArea: 0)
-        assert(!union.isEmpty)
-        
-//        let xor = graph.extractShapes(overlayRule: .xor, minArea: 0)
-//        assert(!xor.isEmpty)
+        for _ in 0..<it_count {
+            let overlay = Overlay(subjShape: subjPaths, clipShape: clipPaths)
+            let graph = overlay.buildGraph(solver: Solver.list)
+            _ = graph.extractShapes(overlayRule: .xor, minArea: 0)
+        }
 
         let end = Date()
+        let time = end.timeIntervalSince(start) / Double(it_count)
         
-        print("spend time: \(end.timeIntervalSince(start))")
+        
+        print("spend time: \(time)")
         
     }
     

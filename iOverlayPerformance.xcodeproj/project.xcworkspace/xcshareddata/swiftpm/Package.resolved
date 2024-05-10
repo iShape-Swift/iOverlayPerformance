@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/iShape-Swift/iTree",
       "state" : {
-        "revision" : "fd1e5fd39807fa870a0c5a6758678194976f3603",
-        "version" : "0.3.0"
+        "revision" : "a159d3ea0042039b72788fc95d6b5a6438fbacbe",
+        "version" : "0.4.0"
       }
     }
   ],

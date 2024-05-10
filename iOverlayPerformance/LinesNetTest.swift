@@ -32,14 +32,14 @@ import Foundation
 struct LinesNetTest {
     
     func run() {
-        let n: Int = 400
+        let n: Int = 1000
         
         let subjPaths = self.manyLinesX(a: 20, n: n)
         let clipPaths = self.manyLinesY(a: 20, n: n)
         
         let start = Date()
         
-        var overlay = Overlay(subjectPaths: subjPaths, clipPaths: clipPaths)
+        let overlay = Overlay(subjectPaths: subjPaths, clipPaths: clipPaths)
         let graph = overlay.buildGraph()
         
         let intersect = graph.extractShapes(overlayRule: .intersect, minArea: 0)
