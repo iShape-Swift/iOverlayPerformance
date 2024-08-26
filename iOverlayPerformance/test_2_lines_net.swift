@@ -10,49 +10,52 @@ import iShape
 import iOverlay
 import Foundation
 
-// 1.02
 // 3 GHz 6-Core Intel Core i5, 40 GB 2667 MHz DDR4
 
-// master
-// 125 - 0.43621301651000977
-// 250 - 2.763880968093872
-// 500 - 18.6367369890213
-// 1000 - 219.44416403770447
-
-// 125 - 0.38937699794769287
-// 250 - 2.3845399618148804
-// 500 - 16.0730299949646
-// 1000 - 117.0342628955841
-
-// 125 - 0.33740293979644775
-// 250 - 2.3845399618148804
-// 500 - 13.026265978813171
-// 1000 - 90.48865497112274
-
-// 125 - 0.09630095958709717
-// 250 - 0.2782919406890869
-// 500 - 1.1537010669708252
-// 1000 - 4.826246023178101
+/*
+ 
+test 2
+ 
+ 2(4 0.6)     - 0.000016(-4.8)
+ 4(8 0.9)     - 0.000052(-4.3)
+ 8(16 1.2)     - 0.000198(-3.7)
+ 16(32 1.5)     - 0.001328(-2.9)
+ 32(64 1.8)     - 0.005164(-2.3)
+ 64(128 2.1)     - 0.022341(-1.7)
+ 128(256 2.4)     - 0.063474(-1.2)
+ 256(512 2.7)     - 0.255476(-0.6)
+ 512(1024 3.0)     - 1.173511(0.1)
+ 1024(2048 3.3)     - 4.955951(0.7)
+ 2048(4096 3.6)     - 20.758480(1.3)
+*/
 
 struct LinesNetTest {
     
-    func run() {
-        let n: Int = 1000
-        
+    func run(n: Int, rule: OverlayRule) {
+
         let subjPaths = self.manyLinesX(a: 20, n: n)
         let clipPaths = self.manyLinesY(a: 20, n: n)
+
+        let it_count = max((1000 / n), 1)
+        let sq_it_count = it_count * it_count
         
         let start = Date()
         
-        let overlay = Overlay(subjectPaths: subjPaths, clipPaths: clipPaths)
-        let graph = overlay.buildGraph()
-        
-        let intersect = graph.extractShapes(overlayRule: .intersect, minArea: 0)
+        for _ in 0..<sq_it_count {
+            let overlay = Overlay(subjShape: subjPaths, clipShape: clipPaths)
+            let graph = overlay.buildGraph(solver: Solver.auto)
+            _ = graph.extractShapes(overlayRule: rule)
+        }
+
         let end = Date()
+        let time = end.timeIntervalSince(start) / Double(sq_it_count)
         
-        assert(!intersect.isEmpty)
+        let polygons_count = 2 * n
+        let count_log = log10(Double(polygons_count))
+        let time_log = log10(time)
         
-        print("LinesNetTest time: \(end.timeIntervalSince(start))")
+        
+        print("\(n)(\(polygons_count) \(String(format: "%.1f", count_log)))     - \(String(format: "%.6f", time))(\(String(format: "%.1f", time_log)))")
     }
     
      
