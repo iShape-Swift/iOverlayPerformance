@@ -5,12 +5,14 @@
 //  Created by Nail Sharipov on 07.11.2023.
 //
 
-run_test_0()
+//run_test_0()
 //run_test_1()
 //run_test_2()
-//run_test_3()
+run_test_3()
 //run_test_4()
 //run_test_5()
+
+//SpiralTest().run(n: 1 << 19)
 
 func run_test_0() {
     print("run Checkerboard test")
@@ -24,7 +26,7 @@ func run_test_1() {
     print("run NotOverlap test")
     for i in 1..<12 {
         let n = 1 << i
-        NotOverlapTest().run(n: n, rule: .xor)
+        NotOverlapTest().run(n: n, rule: .union)
     }
 }
 
@@ -37,10 +39,10 @@ func run_test_2() {
 }
 
 func run_test_3() {
-    print("run Saw test")
-    for i in 1..<12 {
+    print("run Spiral test")
+    for i in 1..<21 {
         let n = 1 << i
-        SawTest().run(n: n, rule: .intersect)
+        SpiralTest().run(n: n)
     }
 }
 

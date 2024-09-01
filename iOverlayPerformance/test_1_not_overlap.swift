@@ -16,17 +16,17 @@ import Foundation
  
 test 1
  
- 2(5 0.7)     - 0.000010(-5.0)
- 4(25 1.4)     - 0.000046(-4.3)
- 8(113 2.1)     - 0.000225(-3.6)
- 16(481 2.7)     - 0.001274(-2.9)
- 32(1985 3.3)     - 0.005460(-2.3)
- 64(8065 3.9)     - 0.023239(-1.6)
- 128(32513 4.5)     - 0.098134(-1.0)
- 256(130561 5.1)     - 0.408358(-0.4)
- 512(523265 5.7)     - 1.833687(0.3)
- 1024(2095105 6.3)     - 7.634835(0.9)
- 2048(8384513 6.9)     - 31.806825(1.5)
+ 5     - 0.000009
+ 25     - 0.000041
+ 113     - 0.000204
+ 481     - 0.001052
+ 1985     - 0.004978
+ 8065     - 0.021336
+ 32513     - 0.089523
+ 130561     - 0.375594
+ 523265     - 1.663087
+ 2095105     - 6.947932
+ 8384513     - 28.777569
 */
 struct NotOverlapTest {
     
@@ -50,11 +50,8 @@ struct NotOverlapTest {
         let time = end.timeIntervalSince(start) / Double(sq_it_count)
         
         let polygons_count = n * n + (n - 1) * (n - 1)
-        let count_log = log10(Double(polygons_count))
-        let time_log = log10(time)
         
-
-        print("\(n)(\(polygons_count) \(String(format: "%.1f", count_log)))     - \(String(format: "%.6f", time))(\(String(format: "%.1f", time_log)))")
+        print("\(polygons_count)     - \(String(format: "%.6f", time))")
     }
 
      

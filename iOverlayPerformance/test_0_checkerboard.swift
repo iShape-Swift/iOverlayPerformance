@@ -61,11 +61,8 @@ struct CheckerboardTest {
         let time = end.timeIntervalSince(start) / Double(sq_it_count)
         
         let polygons_count = n * n + (n - 1) * (n - 1)
-        let count_log = log10(Double(polygons_count))
-        let time_log = log10(time)
         
-
-        print("\(n)(\(polygons_count) \(String(format: "%.1f", count_log)))     - \(String(format: "%.6f", time))(\(String(format: "%.1f", time_log)))")
+        print("\(polygons_count)     - \(String(format: "%.6f", time))")
     }
 
      
