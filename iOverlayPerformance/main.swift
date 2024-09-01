@@ -8,9 +8,9 @@
 //run_test_0()
 //run_test_1()
 //run_test_2()
-run_test_3()
+//run_test_3()
 //run_test_4()
-//run_test_5()
+run_test_5()
 
 //SpiralTest().run(n: 1 << 19)
 
@@ -47,7 +47,7 @@ func run_test_3() {
 }
 
 func run_test_4() {
-    print("run Window test")
+    print("run Windows test")
     for i in 1..<12 {
         let n = 1 << i
         WindowsTest().run(n: n, rule: .difference)
@@ -58,6 +58,6 @@ func run_test_5() {
     print("run NestedSquares test")
     for i in 1..<19 {
         let n = 1 << i
-        NestedSquaresTest().run(n: n, rule: .union)
+        NestedSquaresTest().run(n: n, rule: .xor)
     }
 }

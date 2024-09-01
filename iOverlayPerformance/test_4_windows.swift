@@ -16,17 +16,17 @@ import Foundation
  
 test 4
  
- 2(4 0.6)     - 0.000018(-4.8)
- 4(16 1.2)     - 0.000070(-4.2)
- 8(64 1.8)     - 0.000309(-3.5)
- 16(256 2.4)     - 0.001470(-2.8)
- 32(1024 3.0)     - 0.006165(-2.2)
- 64(4096 3.6)     - 0.026410(-1.6)
- 128(16384 4.2)     - 0.113020(-0.9)
- 256(65536 4.8)     - 0.493123(-0.3)
- 512(262144 5.4)     - 2.045915(0.3)
- 1024(1048576 6.0)     - 8.362559(0.9)
- 2048(4194304 6.6)     - 33.551301(1.5)
+ 8     - 0.000016
+ 32     - 0.000062
+ 128     - 0.000276
+ 512     - 0.001306
+ 2048     - 0.005543
+ 8192     - 0.023805
+ 32768     - 0.104822
+ 131072     - 0.445712
+ 524288     - 1.862371
+ 2097152     - 7.657815
+ 8388608     - 30.833973
 */
 
 struct WindowsTest {
@@ -58,12 +58,9 @@ struct WindowsTest {
         let end = Date()
         let time = end.timeIntervalSince(start) / Double(sq_it_count)
         
-        let polygons_count = n * n
-        let count_log = log10(Double(polygons_count))
-        let time_log = log10(time)
+        let polygons_count = 2 * n * n
         
-
-        print("\(n)(\(polygons_count) \(String(format: "%.1f", count_log)))     - \(String(format: "%.6f", time))(\(String(format: "%.1f", time_log)))")
+        print("\(polygons_count)     - \(String(format: "%.6f", time))")
     }
     
     private func manyWindows(start: Point, a: Int32, b: Int32, offset: Int32, n: Int) -> ([Path], [Path]) {
